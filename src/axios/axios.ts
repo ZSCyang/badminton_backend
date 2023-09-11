@@ -55,10 +55,10 @@ Axios.interceptors.request.use(
     // 即使本地存在token，也有可能token是过期的，所以在响应拦截器中要对返回状态进行判断
     // console.log(store.state.token)
     // const token = store.state.token
-    const token =
-      sessionStorage.getItem("token") ||
-      "$2a$10$.nXOMg1jOcxlwQn3BwUijO7JhRF8dYJtqNDgrAGBw6GFdo291tcOS";
-    config.headers["app-token"] = token;
+    // const token =
+    //   sessionStorage.getItem("token") ||
+    //   "$2a$10$.nXOMg1jOcxlwQn3BwUijO7JhRF8dYJtqNDgrAGBw6GFdo291tcOS";
+    // config.headers["app-token"] = token;
     return config;
   },
   (error) => {

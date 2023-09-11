@@ -2,7 +2,7 @@
 import { ref, reactive, onMounted } from "vue"
 import {  delCategory,saveCategory } from "@/api/cookOrderList"
 onMounted(() => {
-  getgroupListFn()
+  // getgroupListFn()
 })
 
 
@@ -36,18 +36,18 @@ const groupList = ref([
 
 
 
-const getgroupListFn = () => {
-  loadingCategory.value = true
-  delCategory({}).then((res) => {
-    const { data } = res
-    data.forEach((item: any) => {
-      item.isHover = false
-    })
-    groupList.value = data
-  }).finally(() => {
-    loadingCategory.value = false
-  })
-}
+// const getgroupListFn = () => {
+//   loadingCategory.value = true
+//   delCategory({}).then((res) => {
+//     const { data } = res
+//     data.forEach((item: any) => {
+//       item.isHover = false
+//     })
+//     groupList.value = data
+//   }).finally(() => {
+//     loadingCategory.value = false
+//   })
+// }
 
 </script>
 

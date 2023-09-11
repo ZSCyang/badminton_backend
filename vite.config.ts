@@ -9,13 +9,15 @@ export default defineConfig({
   base: "./",
   plugins: [...viteSetting()],
   server: {
+    open:true,//是否自动打开浏览器，可选项
+    cors:true,//允许跨域。
     host: true,
-    port: env.VITE_PORT as unknown as number,
+    // port: env.VITE_PORT as unknown as number,
     proxy: {
-      "/cook": {
-        target: "https://cook.ivs-rfid.com/",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/cook/, ""),
+      "backend": {
+        target: "http://badminton_api.61fly.cn",
+        changeOrigin: true,//开启跨域
+        rewrite: (path) => path.replace(/backend/, ""),
       },
     },
   },
